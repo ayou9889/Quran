@@ -111,7 +111,7 @@ function l(ind){
     ct.textContent=s2[ind].t;
 }
 let s2=[];
-fetch("/get/q.json").then((d)=>d.json()).then((data)=>{
+fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=>{
     s=data;
     s.forEach(e => {
         if(e.t === cmp){
@@ -135,7 +135,7 @@ fetch("/get/q.json").then((d)=>d.json()).then((data)=>{
                 <p>موضعها في القرآن الكريم : من ${o.qp}</p>
             </div>
             `;
-            fetch(`/get/quran/${((Number(o.t) > 100)?"c":(Number(o.t)>50)?"b":"a")}/65${o.t}89.json`).then((d2)=>d2.json()).then((data2)=>{
+            fetch(`https://oufaddoul.com/Quran/get/quran/${((Number(o.t) > 100)?"c":(Number(o.t)>50)?"b":"a")}/65${o.t}89.json`).then((d2)=>d2.json()).then((data2)=>{
                 s2=data2;
                 let str="";
                 s2.forEach((e2,i)=>{
@@ -156,3 +156,4 @@ fetch("/get/q.json").then((d)=>d.json()).then((data)=>{
 container.appendChild(c2);
 container.appendChild(ct);
 document.body.appendChild(container);
+
