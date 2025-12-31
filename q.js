@@ -123,7 +123,7 @@ search.addEventListener("input",(ev)=>{
             // console.log(v.p);
             if((new RegExp(`مكية`)).test(v.p)){
                 container.innerHTML+=`
-                    <a href="/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
+                    <a href="https://oufaddoul.com/Quran/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
                         <p>${v.arn}</p>
                         <p>${v.enn}</p>
                         <p>${v.an} عدد الآيات</p>
@@ -137,7 +137,7 @@ search.addEventListener("input",(ev)=>{
         for(let v of s){
             if((new RegExp(`مدنية`)).test(v.p)){
                 container.innerHTML+=`
-                    <a href="/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
+                    <a href="https://oufaddoul.com/Quran/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
                         <p>${v.arn}</p>
                         <p>${v.enn}</p>
                         <p>${v.an} عدد الآيات</p>
@@ -151,7 +151,7 @@ search.addEventListener("input",(ev)=>{
         for(let v of s){
             if((ev.target.textContent) === (v.an)){
                 container.innerHTML+=`
-                    <a href="/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
+                    <a href="https://oufaddoul.com/Quran/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
                         <p>${v.arn}</p>
                         <p>${v.enn}</p>
                         <p>${v.an} عدد الآيات</p>
@@ -166,7 +166,7 @@ search.addEventListener("input",(ev)=>{
         if(ev.target.textContent != "" && (new RegExp(`${(ev.target.textContent)}`)).test(v.arn)){
             // console.log(v.arn);
             container.innerHTML+=`
-                <a href="/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
+                <a href="https://oufaddoul.com/Quran/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
                     <p>${v.arn}</p>
                     <p>${v.enn}</p>
                     <p>${v.an} عدد الآيات</p>
@@ -183,3 +183,4 @@ searchC.appendChild(searchd);
 document.body.appendChild(container);
 
 document.body.appendChild(searchC);
+
