@@ -82,7 +82,12 @@ container.style=`
     flex-direction: column;
 `;
 const h1=document.createElement("h1");
-h1.style.color="white";
+h1.style=`
+    color:white;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+`;
 document.body.appendChild(h1);
 const c2=document.createElement("div");
 c2.style=`
@@ -125,7 +130,10 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
             o.enn=e.enn;
             o.ln=e.ln;
             o.qp=e.qp;
-            h1.textContent=`سورة ${o.arn} | ${o.enn}`;
+            h1.innerHTML=`
+                <span>سورة ${o.arn}</span>
+                <span>${o.enn}</span>
+            `;
             c2.innerHTML=`
             <div class="d">
                 <p>${o.an} : عدد الآيات</p>
@@ -155,6 +163,7 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
 container.appendChild(c2);
 container.appendChild(ct);
 document.body.appendChild(container);
+
 
 
 
