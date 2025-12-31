@@ -51,7 +51,7 @@ logo.setAttribute("href","https://oufaddoul.com/");
 logo.setAttribute("title","Ayoub Oufaddoul");
 logo.appendChild(logoimg);
 let s=[];
-fetch("/get/q.json").then((d)=>d.json()).then((data)=>{
+fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=>{
     s=data;
 });
 let w=Math.floor((window.innerWidth*0.90));
@@ -181,4 +181,5 @@ searchd.appendChild(search);
 searchd.appendChild(logo);
 searchC.appendChild(searchd);
 document.body.appendChild(container);
+
 document.body.appendChild(searchC);
