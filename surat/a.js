@@ -45,6 +45,7 @@ style.innerHTML=`
         width:100%;
         display:flex;
         justify-content:center;
+        align-items: center;
         padding: 15px;
         box-sizing: border-box;
     }
@@ -154,5 +155,6 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
 container.appendChild(c2);
 container.appendChild(ct);
 document.body.appendChild(container);
+
 
 
