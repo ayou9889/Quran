@@ -124,7 +124,6 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
             o.enn=e.enn;
             o.ln=e.ln;
             o.qp=e.qp;
-            console.log(o.arn);
             h1.textContent=`سورة ${o.arn} | ${o.enn}`;
             c2.innerHTML=`
             <div class="d">
@@ -141,7 +140,6 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
                 s2.forEach((e2,i)=>{
                     str+=`<span onclick='l(${i});ct.style.display="flex";document.body.style.overflow="hidden";'>${e2.a}</span><strong>${e2.an}</strong>`;
                 });
-                console.log(str);
                 c2.innerHTML+=`<div>${str}</div>`;
             }).then(()=>{
                 container.insertAdjacentHTML("afterend",`
@@ -156,4 +154,5 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
 container.appendChild(c2);
 container.appendChild(ct);
 document.body.appendChild(container);
+
 
