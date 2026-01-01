@@ -22,6 +22,15 @@ style.innerHTML=`
     .d p{
         margin:0;
     }
+    div.i{
+        width:97%;
+        color:lightgray;
+        font-size:1.2em;
+        margin-top:15px;
+        direction:rtl;
+        display:flex;
+        justify-content:center;
+    }
     @media (max-width:768px) {
         .d{
             width:calc(100% / 2 - 5px);
@@ -70,7 +79,9 @@ container.style=`
     padding:10px;
     padding-bottom:97px;
 `;
-
+container.innerHTML=`
+    <div class="i">ابحث عن طريق كتابة اسم السورة أو مكان نزولها أو عدد آياتها.</div>
+`;
 const searchC=document.createElement("div");
 searchC.style=`
     position:fixed;
@@ -148,12 +159,17 @@ search.addEventListener("input",(ev)=>{
             `;
         }
     }
+    if(container.innerHTML==="")
+        container.innerHTML=`
+            <div class="i">ابحث عن طريق كتابة اسم السورة أو مكان نزولها أو عدد آياتها.</div>
+        `;
 });
 searchd.appendChild(search);
 searchd.appendChild(logo);
 searchC.appendChild(searchd);
 document.body.appendChild(container);
 document.body.appendChild(searchC);
+
 
 
 
