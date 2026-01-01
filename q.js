@@ -10,7 +10,7 @@ style.innerHTML=`
         padding:5px;
         background-color:#171717;
         color:white;
-        width:120px;
+        width:165px;
         display:flex;
         flex-direction: column;
         align-items:center;
@@ -56,7 +56,7 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
 });
 let w=Math.floor((window.innerWidth*0.90));
 if(window.innerHeight < window.innerWidth){
-    w=640;
+    w=695;
 }
 const container=document.createElement("div");
 container.style=`
@@ -183,4 +183,5 @@ searchC.appendChild(searchd);
 document.body.appendChild(container);
 
 document.body.appendChild(searchC);
+
 
