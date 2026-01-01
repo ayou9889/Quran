@@ -152,7 +152,7 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
                 c2.innerHTML+=`<div>${str}</div>`;
             }).then(()=>{
                 container.insertAdjacentHTML("afterend",`
-                    <footer>This website made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
+                    <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
                 `);
             });
             return;
@@ -163,6 +163,7 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
 container.appendChild(c2);
 container.appendChild(ct);
 document.body.appendChild(container);
+
 
 
 
