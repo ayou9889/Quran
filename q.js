@@ -163,12 +163,14 @@ search.addEventListener("input",(ev)=>{
         container.innerHTML=`
             <div class="i">ابحث عن طريق كتابة اسم السورة أو مكان نزولها أو عدد آياتها.</div>
         `;
+    search.focus();
 });
 searchd.appendChild(search);
 searchd.appendChild(logo);
 searchC.appendChild(searchd);
 document.body.appendChild(container);
 document.body.appendChild(searchC);
+
 
 
 
