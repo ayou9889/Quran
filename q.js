@@ -127,7 +127,7 @@ function l(t,r,k="65"){
         for(let v of s){
             if(((k === "65")?r.test(v.p):(k === (v.an)))){
                 container.innerHTML+=`
-                    <a href="/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
+                    <a href="https://oufaddoul.com/Quran/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
                         <p>${v.arn}</p>
                         <p>${v.enn}</p>
                         <p>${v.an} عدد الآيات</p>
@@ -169,6 +169,7 @@ searchd.appendChild(logo);
 searchC.appendChild(searchd);
 document.body.appendChild(container);
 document.body.appendChild(searchC);
+
 
 
 
