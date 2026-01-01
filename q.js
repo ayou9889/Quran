@@ -111,60 +111,33 @@ search.addEventListener("focus",(e)=>{
 search.addEventListener("blur",(e)=>{
     e.target.style.outline="none";
 });
-
+function l(t,r,k="65"){
+    if(t){
+        for(let v of s){
+            if(((k === "65")?r.test(v.p):(k === (v.an)))){
+                container.innerHTML+=`
+                    <a href="/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
+                        <p>${v.arn}</p>
+                        <p>${v.enn}</p>
+                        <p>${v.an} عدد الآيات</p>
+                        <p>${v.p}</p>
+                    </a>
+                `;
+            }
+        }
+    }
+}
 search.addEventListener("input",(ev)=>{
     container.innerHTML="";
     if(/[a-z]+/i.test(ev.target.textContent))
         ev.target.style.direction="ltr";
     else 
         ev.target.style.direction="rtl";
-    if(/^makia$|^makki$|^مكية$/i.test(ev.target.textContent)){
-        for(let v of s){
-            // console.log(v.p);
-            if((new RegExp(`مكية`)).test(v.p)){
-                container.innerHTML+=`
-                    <a href="https://oufaddoul.com/Quran/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
-                        <p>${v.arn}</p>
-                        <p>${v.enn}</p>
-                        <p>${v.an} عدد الآيات</p>
-                        <p>${v.p}</p>
-                    </a>
-                `;
-            }
-        }
-    }
-    else  if(/^madani$|^madania$|^مدنية$/i.test(ev.target.textContent)){
-        for(let v of s){
-            if((new RegExp(`مدنية`)).test(v.p)){
-                container.innerHTML+=`
-                    <a href="https://oufaddoul.com/Quran/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
-                        <p>${v.arn}</p>
-                        <p>${v.enn}</p>
-                        <p>${v.an} عدد الآيات</p>
-                        <p>${v.p}</p>
-                    </a>
-                `;
-            }
-        }
-    }
-    else if(/^\d{1,3}$/i.test(ev.target.textContent)){
-        for(let v of s){
-            if((ev.target.textContent) === (v.an)){
-                container.innerHTML+=`
-                    <a href="https://oufaddoul.com/Quran/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
-                        <p>${v.arn}</p>
-                        <p>${v.enn}</p>
-                        <p>${v.an} عدد الآيات</p>
-                        <p>${v.p}</p>
-                    </a>
-                `;
-            }
-        }
-    }
+    l(/^makia$|^makki$|^مكية$/i.test(ev.target.textContent),(new RegExp(`مكية`)));
+    l(/^madani$|^madania$|^مدنية$/i.test(ev.target.textContent),(new RegExp(`مدنية`)));
+    l(/^\d{1,3}$/i.test(ev.target.textContent),/65/i,(ev.target.textContent));
     for(let v of s){
-        // console.log(v[0],v[1]);
         if(ev.target.textContent != "" && (new RegExp(`${(ev.target.textContent)}`)).test(v.arn)){
-            // console.log(v.arn);
             container.innerHTML+=`
                 <a href="https://oufaddoul.com/Quran/surat/" class="d" onclick="localStorage.setItem('S','${v.t}');">
                     <p>${v.arn}</p>
@@ -176,12 +149,11 @@ search.addEventListener("input",(ev)=>{
         }
     }
 });
-
 searchd.appendChild(search);
 searchd.appendChild(logo);
 searchC.appendChild(searchd);
 document.body.appendChild(container);
-
 document.body.appendChild(searchC);
+
 
 
