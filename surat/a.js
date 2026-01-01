@@ -54,6 +54,13 @@ style.innerHTML=`
         font-weight:600;
         text-decoration:none;
     }
+    @media (max-width:480px) {
+        footer{
+            flex-direction: column;
+            align-items: center;
+            gap:5px;
+        }
+    }
 `;
 document.querySelector("head").appendChild(style);
 document.querySelector("html").style.height="100%";
@@ -163,6 +170,7 @@ fetch("https://oufaddoul.com/Quran/get/q.json").then((d)=>d.json()).then((data)=
 container.appendChild(c2);
 container.appendChild(ct);
 document.body.appendChild(container);
+
 
 
 
